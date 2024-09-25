@@ -1,5 +1,6 @@
 import Button from "../component/Button"
 import Header from "../component/Header"
+import Editor from "../component/Editor"
 
 const Home = () => {
      return (
@@ -21,6 +22,7 @@ const Home = () => {
                 />
                 }
             />
+            <Editor />
             {/* <Button 
                 text={"기본"}
                 onClick={() => alert('기본')}
