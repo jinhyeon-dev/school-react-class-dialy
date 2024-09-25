@@ -1,12 +1,22 @@
 import Button from "../component/Button"
+import Header from "../component/Header"
 
 const Home = () => {
      return (
         <div>
-            <Button 
+            <Header 
+                title={"Home"}
+                leftChild={
+                    <Button 
+                    text={"기본"}
+                    onClick={() => alert('기본')}
+                />
+                }
+            />
+            {/* <Button 
                 text={"기본"}
                 onClick={() => alert('기본')}
-            />
+            /> */}
             <Button 
                 type="positive"
                 text={"긍정"}
