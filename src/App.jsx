@@ -9,20 +9,20 @@ import { getEmotionImgById } from './util'
 function App() {
   return (
     <div className="App">
+      <div>
+        <img src={getEmotionImgById(1)} />
+      </div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/new' element={<New />} />
         <Route path='/edit' element={<Edit />} />
-        <Route path='/diary' element={<Diary />} />
+        <Route path='/diary:id' element={<Diary />} />
       </Routes>
 
       <Link to={"/"}>Home</Link>
       <Link to={"/new"}>New</Link>
       <Link to={"/edit"}>Edit</Link>
       <Link to={"/diary"}>Diary</Link>
-      <div>
-        <img src={getEmotionImgById(1)} />
-      </div>
     </div>
   );
 }
