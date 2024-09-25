@@ -1,8 +1,13 @@
 import { useParams } from "react-router-dom"
+import { useSearchParams } from "react-router-dom"
 
+// http://localhost:3000/diary?sort=latest
 const Diary = () => {
-    const id = useParams()
-    console.log(id)
+    const [useSearchParams, setSearchParams] = useSearchParams()
+    // const id = useParams()
+    console.log(useSearchParams.get("sort"))
+
+    // console.log(id)
     return (
        <div>
            Diary
