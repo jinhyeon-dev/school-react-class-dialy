@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import New from './pages/New'
 import Edit from './pages/Edit'
 import Diary from './pages/Diary'
-import emotion1 from './img/png/emotion1.png'
+import { getEmotionImgById } from './util'
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
       <Link to={"/edit"}>Edit</Link>
       <Link to={"/diary"}>Diary</Link>
       <div>
-        <img src={emotion1} />
+        <img src={getEmotionImgById(1)} />
       </div>
     </div>
   );
