@@ -8,8 +8,16 @@ const Home = () => {
                 title={"Home"}
                 leftChild={
                     <Button 
-                    text={"기본"}
-                    onClick={() => alert('기본')}
+                    type="positive"
+                    text={"긍정"}
+                    onClick={() => alert('긍정')}
+                />
+                }
+                rightChild={
+                    <Button 
+                    type="negative"
+                    text={"부정"}
+                    onClick={() => alert('부정')}
                 />
                 }
             />
@@ -17,16 +25,16 @@ const Home = () => {
                 text={"기본"}
                 onClick={() => alert('기본')}
             /> */}
-            <Button 
+            {/* <Button 
                 type="positive"
                 text={"긍정"}
                 onClick={() => alert('긍정')}
-            />
-            <Button 
+            /> */}
+            {/* <Button 
                 type="negative"
                 text={"부정"}
                 onClick={() => alert('부정')}
-            />
+            /> */}
         </div>
      )
 }
