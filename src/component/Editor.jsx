@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { emotionList, getFormattedDate } from '../util'
 import './Editor.css'
+import EmotionItem from './EmotionItem'
 import Button from './Button'
 
 const Editor = ({ initData, onSubmit }) => {
@@ -30,6 +31,14 @@ const Editor = ({ initData, onSubmit }) => {
         })
     }
 
+    // 오늘의 기분 변동시 변경사항을 상태에 저장
+    const handleOnChangeEmotion = (emotionId) => {
+        setState({
+            ...state, 
+            emotionId
+        })
+    }
+
     // 작성완료 : 일기 저장
     const handleSubmit = () => {
         onSubmit(state)
@@ -39,6 +48,7 @@ const Editor = ({ initData, onSubmit }) => {
     const handleOnGoBack = () => {
         navigate(-1)
     }
+
 
     return (
         <div className='Editor'>
@@ -55,7 +65,12 @@ const Editor = ({ initData, onSubmit }) => {
                 <h4>오늘의 기분</h4>
                 <div className='input_wrapper emotion_list_wrapper'>
                     {emotionList.map((it) => (
-                        <img key={it.id} alt={`emotion${it.id}`} src={it.img} />
+                        // <img key={it.id} alt={`emotion${it.id}`} src={it.img} />
+                        <EmotionItem
+                            key={it.id}
+                            {...it}
+                            onClick={handleOnChangeEmotion}
+                            isSelected={state.emotionId === it.id} />
                     ))}
                 </div>
             </div>
