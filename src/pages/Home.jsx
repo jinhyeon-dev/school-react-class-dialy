@@ -22,7 +22,9 @@ const Home = () => {
                 />
                 }
             />
-            <Editor />
+            <Editor onSubmit={() => {
+                alert('작성완클릭')
+            }}/>
             {/* <Button 
                 text={"기본"}
                 onClick={() => alert('기본')}

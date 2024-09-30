@@ -4,14 +4,14 @@ import Home from './pages/Home'
 import New from './pages/New'
 import Edit from './pages/Edit'
 import Diary from './pages/Diary'
-import { getEmotionImgById } from './util'
+// import { getEmotionImgById } from './util'
 
 function App() {
   return (
     <div className="App">
-      <div>
+      {/* <div>
         <img src={getEmotionImgById(1)} alt="emotion1" />
-      </div>
+      </div> */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/new' element={<New />} />
