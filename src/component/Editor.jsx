@@ -10,7 +10,16 @@ const Editor = ({ initData, onSubmit }) => {
         content: ""
     })
 
+    // 날짜 변동시 변경사항을 상태에 저장
     const handleChange = (e) => {
+        setState({
+            ...state,
+            date: e.target.value
+        })
+    }
+
+    // 일기의 내용 변동시 변경을 상태에 저장
+    const handleChangeContent = (e) => {
         setState({
             ...state,
             date: e.target.value
@@ -33,7 +42,12 @@ const Editor = ({ initData, onSubmit }) => {
             </div>
             <div className='editor_section'>
                 {/* Diary */}
-                <h4>Diary</h4>
+                <h4>오늘의 일기</h4>
+                <div className='input_wrapper'>
+                    <textarea
+                        value={state.content}
+                        onChange={handleChangeContent} />
+                </div>
             </div>
             <div className='editor_section'>
                 {/* 작성완료 또는 취소 */}
