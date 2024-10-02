@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, Link } from 'react-router-dom' // Link 추가
+import { Routes, Route } from 'react-router-dom' // Link 추가
 import React, { useReducer, useRef, useEffect, useState } from 'react'
 import Home from './pages/Home'
 import New from './pages/New'
@@ -107,25 +107,25 @@ function App() {
           onUpdate,
           onDelete
         }}>
-        <div className="App">
+          <div className="App">
 
-          {/* <div>
+            {/* <div>
         <img src={getEmotionImgById(1)} alt="emotion1" />
       </div> */}
 
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/new' element={<New />} />
-            <Route path='/edit' element={<Edit />} />
-            <Route path='/diary' element={<Diary />} />
-          </Routes>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/new' element={<New />} />
+              <Route path='/edit/:id' element={<Edit />} />
+              <Route path='/diary/:id' element={<Diary />} />
+            </Routes>
 
-          {/* <Link to={"/"}>Home</Link> {" "}
+            {/* <Link to={"/"}>Home</Link> {" "}
       <Link to={"/new"}>New</Link> {" "}
       <Link to={"/edit"}>Edit</Link> {" "}
       <Link to={"/diary"}>Diary</Link> */}
 
-        </div>
+          </div>
         </DiaryDispatchContext.Provider>
       </DiaryStateContext.Provider>
     );
