@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { emotionList, getFormattedDate } from '../util'
 import './Editor.css'
@@ -8,12 +8,22 @@ import Button from './Button'
 const Editor = ({ initData, onSubmit }) => {
     const navigate = useNavigate()
 
+
     // 새로운 일기 작성시 초기값
     const [state, setState] = useState({
         date: getFormattedDate(new Date()),
         emotionId: 3,
         content: ""
     })
+
+    useEffect(() => {
+        if (initData) {
+            setState({
+                ...initData,
+                date: getFormattedDate(new Date(parseInt(initData.date)))
+            })
+        }
+    }, [initData])
 
     // 날짜 변동시 변경사항을 상태에 저장
     const handleChange = (e) => {
@@ -34,7 +44,7 @@ const Editor = ({ initData, onSubmit }) => {
     // 오늘의 기분 변동시 변경사항을 상태에 저장
     const handleOnChangeEmotion = (emotionId) => {
         setState({
-            ...state, 
+            ...state,
             emotionId
         })
     }
