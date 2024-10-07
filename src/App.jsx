@@ -27,6 +27,28 @@ function reducer(state, action) {
   }
 }
 
+const mockData = [
+  {
+    id: "mock1",
+    date: new Date().getTime() - 1,
+    content: "mock1",
+    emotionId: 1,
+  },
+
+  {
+    id: "mock2",
+    date: new Date().getTime() - 2,
+    content: "mock2",
+    emotionId: 2,
+  },
+  {
+    id: "mock3",
+    date: new Date().getTime() - 3,
+    content: "mock3",
+    emotionId: 3,
+  },
+]
+
 
 function App() {
   const [data, dispatch] = useReducer(reducer, [])
@@ -73,28 +95,6 @@ function App() {
     })
   }
 
-  const mockData = [
-    {
-      id: "mock1",
-      date: new Date().getTime,
-      content: "mock1",
-      emotionId: 1,
-    },
-
-    {
-      id: "mock2",
-      date: new Date().getTime,
-      content: "mock2",
-      emotionId: 2,
-    },
-    {
-      id: "mock3",
-      date: new Date().getTime,
-      content: "mock3",
-      emotionId: 3,
-    },
-  ]
-
   if (!isDataLoaded) {
     return <div>데이터를 불러오는 중입니다.</div>
   }
@@ -108,23 +108,12 @@ function App() {
           onDelete
         }}>
           <div className="App">
-
-            {/* <div>
-        <img src={getEmotionImgById(1)} alt="emotion1" />
-      </div> */}
-
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/new' element={<New />} />
               <Route path='/edit/:id' element={<Edit />} />
               <Route path='/diary/:id' element={<Diary />} />
             </Routes>
-
-            {/* <Link to={"/"}>Home</Link> {" "}
-      <Link to={"/new"}>New</Link> {" "}
-      <Link to={"/edit"}>Edit</Link> {" "}
-      <Link to={"/diary"}>Diary</Link> */}
-
           </div>
         </DiaryDispatchContext.Provider>
       </DiaryStateContext.Provider>
