@@ -1,11 +1,12 @@
 import './Viewer.css'
-import { emotionList, emotionList } from '../util'
+import { emotionId, emotionList } from '../util'
+import EmotionItem from './EmotionItem'
 
 const Viewer = ({ content, emotionId }) => {
     const emotionList = emotionList.find((it) => it.id === emotionId)
 
 
-    reutnr(
+    return(
         <div className='Viewer'>
             <section>
                 <h4>오늘의 일기</h4>
@@ -15,8 +16,8 @@ const Viewer = ({ content, emotionId }) => {
                     ].join(" ")} >
                 </div>
 
-                <img alt={emotionId.name} src={emotoinItem.img} />
-                <div className='emotion_descript'>{emotionId.name}</div>
+                <img alt={EmotionItem.name} src={EmotionItem.img} />
+                <div className='emotion_descript'>{EmotionItem.name}</div>
             </section>
             <section>
                 <h4>내용</h4>
