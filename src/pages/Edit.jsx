@@ -27,7 +27,6 @@ const Edit = () => {
 
     const onSubmit = (date) => {
         if(window.confirm('일기를 정말 수정할까요?')) {
-            const (date, content, emotionId)
             onSubmit(id, date, content, emotionId)
             navigate('/', { replace: true })
         }
